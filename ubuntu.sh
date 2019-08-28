@@ -4,7 +4,7 @@ echo "            Auto Insstaller Tunneling"
 echo "SSH- SSL - Squid - OpenVPN - Shadowsocks - UDPGW"
 echo "                  Ubuntu OS"
 echo "====================================================="
-echo "         Tunggu proses instalasi selesai"
+echo "         Quick install script"
 echo "====================================================="
 
 

@@ -2,10 +2,10 @@
 
 Full Version include: SSH over HTTP ( squid ),SSH over TLS ( stunnel ), openvpn , openvpn over TLS ( stunnel ), Shadowsocks, Shadowsocks over TLS ( stunnel )  
 How to install the full version (including openvpn)?  
-```bash AutoInstallAll.sh``` 
+```bash ubuntu.sh``` 
 
 How to install a non-full version (not including openvpn)?  
 
-```bash AutoInstallPart.sh```
+```bash ubuntu-part.sh```
 
-Only test on Ubuntu18 and Ubuntu14
+Test only available for ubuntu
