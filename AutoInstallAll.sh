@@ -243,7 +243,7 @@ cat >> /etc/shadowsocks/shadowsocks.json <<-END
 {
     "server":"$ip",
     "server_port":8388,
-    "password":"globalssh",
+    "password":"freeguest",
     "timeout":300,
     "method":"aes-256-cfb",
     "fast_open": true
@@ -384,7 +384,46 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 echo "--------------------------------"
 echo "Stunnel Installed..."
 echo "--------------------------------"
+
 sleep 5
+#install badvpn-udpgw
+echo "#!/bin/bash
+if [ "'$1'" == start ]
+then
+badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10 > /dev/null &
+echo 'Badvpn rodando na porta 7300'
+fi
+if [ "'$1'" == stop ]
+then
+badvpnpid="'$(ps x |grep badvpn |grep -v grep |awk '"{'"'print $1'"'})
+kill -9 "'"$badvpnpid" >/dev/null 2>/dev/null
+kill $badvpnpid > /dev/null 2> /dev/null
+kill "$badvpnpid" > /dev/null 2>/dev/null''
+kill $(ps x |grep badvpn |grep -v grep |awk '"{'"'print $1'"'})
+killall badvpn-udpgw
+fi" > /bin/badvpn
+chmod +x /bin/badvpn
+if [ -f /usr/bin/badvpn-udpgw ]; then
+echo -e "\033[1;32mBadvpn ja esta instalado\033[0m"
+rm -rf easyinstall >/dev/null 2>/dev/null
+exit
+else
+clear
+fi
+echo "Installing Badvpn"
+echo "Fazendo download do Badvpn"
+wget -O /usr/bin/badvpn-udpgw https://github.com/CLOUDSERVERS/badvpn/blob/master/badvpn-udpgw?raw=true -o /dev/null
+chmod +x /usr/bin/badvpn-udpgw
+clear
+echo "Install completed" 
+echo "badvpn stop/start"
+rm -rf easyinstall >/dev/null 2>/dev/null
+sleep 5s
+badvpn start
+echo "--------------------------------"
+echo "UDPGW Installed..."
+echo "--------------------------------"
+sleep 3s
 
 #informasi
 clear
