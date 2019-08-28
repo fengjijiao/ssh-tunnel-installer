@@ -1,4 +1,4 @@
 # tunneling
 SSH, Squid, VPN, SSL
 How to Start?
-```bash AutoInstall.sh
+```bash AutoInstall.sh```
