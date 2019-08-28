@@ -11,7 +11,7 @@ apt-get -y install nano
 
 #membuat banner
 cat > /etc/issue.net <<-END
-PREMIUM SSH SINGAPORE
+PREMIUM SSH
 
 TERMS OF SERVICE:
 -NO SHARE ACCOUNT

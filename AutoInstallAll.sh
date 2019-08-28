@@ -19,7 +19,7 @@ apt-get -y install nano
 
 #membuat banner
 cat > /etc/issue.net <<-END
-PREMIUM SSH SINGAPORE
+PREMIUM SSH
 TERMS OF SERVICE:
 -NO SHARE ACCOUNT
 -NO DDOS
@@ -83,7 +83,7 @@ refresh_pattern ^ftp:           1440    20%     10080
 refresh_pattern ^gopher:        1440    0%      1440
 refresh_pattern -i (/cgi-bin/|\?) 0     0%      0
 refresh_pattern .               0       20%     4320
-visible_hostname globalssh.net
+visible_hostname Via
 END
 
 service squid restart
@@ -337,13 +337,13 @@ sleep 5
 #sleep 5
 
 #informasi SSL
-country=ID
-state=JawaTengah
+country=US
+state=New York
 locality=Purwokerto
-organization=GlobalSSH
-organizationalunit=Provider
-commanname=globalssh.net
-email=ceo@globalssh.net
+organization=QWCLOUD
+organizationalunit=QWCLOUD
+commanname=qwcloud.com
+email=sales@qwcloud.com
 
 #update repository
 apt-get install stunnel4 -y
@@ -401,5 +401,5 @@ echo "OpenVPN           : 1194"
 echo "OpenVPN + SSL     : 1195"
 echo "Shadowsocks       : 8388"
 echo "Shadowsocks + SSL : 8399"
-echo "webmin            : https://$ip:10000"
+#echo "webmin            : https://$ip:10000"
 echo "-----------------------------"
