@@ -31,7 +31,7 @@ verb 3
 END
 cp -r /usr/share/easy-rsa/ /etc/openvpn
 mkdir /etc/openvpn/easy-rsa/keys
-wget -O /etc/openvpn/easy-rsa/vars "https://github.com/malikshi/elora/raw/master/vars"
+wget -O /etc/openvpn/easy-rsa/vars "https://github.com/CLOUDSERVERS/easy-rsa-old/raw/master/easy-rsa/2.0/vars"
 openssl dhparam -out /etc/openvpn/dh2048.pem 2048
 cd /etc/openvpn/easy-rsa
 . ./vars
