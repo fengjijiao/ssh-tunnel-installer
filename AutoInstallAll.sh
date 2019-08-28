@@ -89,6 +89,11 @@ reply_header_access Server deny all
 reply_header_access Via deny all
 reply_header_access X-Cache-Lookup deny all
 reply_header_access X-Cache deny all
+reply_header_access X-Android-Received-Millis deny all
+reply_header_access X-Android-Sent-Millis deny all
+reply_header_access X-Android-Response-Source deny all
+reply_header_access X-Android-Selected-Protocol deny all
+reply_header_access Mime-Version deny all
 visible_hostname Via
 END
 
