@@ -54,7 +54,8 @@ sleep 5
 #instalasi squid
 apt-get install squid -y
 mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
-ip=$(ifconfig | awk -F':' '/inet addr/&&!/127.0.0.1/&&!/127.0.0.2/{split($2,_," ");print _[1]}')
+#ip=$(ifconfig | awk -F':' '/inet addr/&&!/127.0.0.1/&&!/127.0.0.2/{split($2,_," ");print _[1]}')
+ip=$(curl "https://api.ipify.org")
 cat > /etc/squid/squid.conf <<-END
 acl SSL_ports port 443
 acl Safe_ports port 21
@@ -212,7 +213,7 @@ sleep 5
 
 #informasi SSL
 country=US
-state=New York
+state=NewYork
 locality=Purwokerto
 organization=QWCLOUD
 organizationalunit=QWCLOUD
