@@ -19,14 +19,14 @@ apt-get -y install nano
 
 #membuat banner
 cat > /etc/issue.net <<-END
-PREMIUM SSH
-TERMS OF SERVICE:
--NO SHARE ACCOUNT
--NO DDOS
--NO HACKING,CRACKING AND CARDING
--NO TORRENT
--NO SPAM
--NO PLAYSTATION SITE
+PREMIUM SSH  \n
+TERMS OF SERVICE:  \n
+-NO SHARE ACCOUNT  \n
+-NO DDOS  \n
+-NO HACKING,CRACKING AND CARDING  \n
+-NO TORRENT  \n
+-NO SPAM  \n
+-NO PLAYSTATION SITE  \n
 THANKS.
 END
 
@@ -91,7 +91,12 @@ reply_header_access X-Cache-Lookup deny all
 reply_header_access X-Cache deny all
 reply_header_access Vary deny all
 reply_header_access Mime-Version deny all
+via off
+forwarded_for off
+follow_x_forwarded_for deny all
+request_header_access X-Forwarded-For deny all
 visible_hostname Via
+httpd_suppress_version_string on
 END
 
 service squid restart
