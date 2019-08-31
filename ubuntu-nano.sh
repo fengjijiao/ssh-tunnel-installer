@@ -288,17 +288,16 @@ killall badvpn-udpgw
 fi" > /bin/badvpn
 chmod +x /bin/badvpn
 if [ -f /usr/bin/badvpn-udpgw ]; then
-echo -e "\033[1;32mBadvpn ja esta instalado\033[0m"
+echo -e "\033[1;32mBadvpn installed\033[0m"
 rm -rf easyinstall >/dev/null 2>/dev/null
 exit
 else
-clear
+#
 fi
 echo "Installing Badvpn"
-echo "Fazendo download do Badvpn"
+echo "download do Badvpn"
 wget -O /usr/bin/badvpn-udpgw https://github.com/CLOUDSERVERS/badvpn/blob/master/badvpn-udpgw?raw=true -o /dev/null
 chmod +x /usr/bin/badvpn-udpgw
-clear
 echo "Install completed" 
 echo "badvpn stop/start"
 rm -rf easyinstall >/dev/null 2>/dev/null
