@@ -2,19 +2,19 @@
 
 Full Version include: SSH over HTTP ( squid ),SSH over TLS ( stunnel ), openvpn , openvpn over TLS ( stunnel ), Shadowsocks, Shadowsocks over TLS ( stunnel )  
 How to install the full version (including openvpn)?  
-```bash https://raw.githubusercontent.com/fengjijiao/ssh-tunnel-installer/master/ubuntu-full.sh``` 
+```wget -o installer.sh https://raw.githubusercontent.com/fengjijiao/ssh-tunnel-installer/master/ubuntu-full.sh || bash installer.sh``` 
 
 How to install a nano version (not including openvpn)?  
 
-```bash https://raw.githubusercontent.com/fengjijiao/ssh-tunnel-installer/master/ubuntu-nano.sh```
+```wget -o installer.sh https://raw.githubusercontent.com/fengjijiao/ssh-tunnel-installer/master/ubuntu-nano.sh || bash installer.sh```
 
 How to install a mini version (not including openvpn & shadowsocks)?  
 
-```bash https://raw.githubusercontent.com/fengjijiao/ssh-tunnel-installer/master/ubuntu-mini.sh```
+```wget -o installer.sh https://raw.githubusercontent.com/fengjijiao/ssh-tunnel-installer/master/ubuntu-mini.sh || bash installer.sh```
 
 How to install a tiny version (not including openvpn & shadowsocks & tls)?  
 
-```bash https://raw.githubusercontent.com/fengjijiao/ssh-tunnel-installer/master/ubuntu-tiny.sh```
+```wget -o installer.sh https://raw.githubusercontent.com/fengjijiao/ssh-tunnel-installer/master/ubuntu-tiny.sh || bash installer.sh```
 
 Test only available for ubuntu
 
