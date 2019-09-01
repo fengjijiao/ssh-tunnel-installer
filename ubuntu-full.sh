@@ -18,7 +18,7 @@ apt-get -y install wget curl
 apt-get -y install nano
 
 #membuat banner
-cat > /etc/issue.net <<-END
+cat > /etc/banner.txt <<-END
 PREMIUM SSH  \n
 TERMS OF SERVICE:  \n
 -NO SHARE ACCOUNT  \n
@@ -41,7 +41,7 @@ apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=80/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 143"/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_BANNER=""/DROPBEAR_BANNER="\/etc\/issue.net"/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_BANNER=""/DROPBEAR_BANNER="\/etc\/banner.txt"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
 service dropbear restart
 
@@ -418,7 +418,7 @@ killall badvpn-udpgw
 fi" > /bin/badvpn
 chmod +x /bin/badvpn
 if [ -f /usr/bin/badvpn-udpgw ]; then
-echo -e "\033[1;32mBadvpn installed\033[0m"
+echo -e "Badvpn installed"
 rm -rf easyinstall >/dev/null 2>/dev/null
 exit
 else
@@ -429,7 +429,7 @@ echo "download do Badvpn"
 wget -O /usr/bin/badvpn-udpgw https://github.com/CLOUDSERVERS/badvpn/blob/master/badvpn-udpgw?raw=true -o /dev/null
 chmod +x /usr/bin/badvpn-udpgw
 echo "Install completed" 
-echo "badvpn stop/start"
+echo "usage: badvpn stop/start"
 rm -rf easyinstall >/dev/null 2>/dev/null
 sleep 5s
 badvpn start
