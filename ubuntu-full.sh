@@ -419,7 +419,6 @@ fi" > /bin/badvpn
 chmod +x /bin/badvpn
 if [ -f /usr/bin/badvpn-udpgw ]; then
 echo -e "Badvpn installed"
-rm -rf easyinstall >/dev/null 2>/dev/null
 exit
 else
 #
@@ -430,7 +429,6 @@ wget -O /usr/bin/badvpn-udpgw https://github.com/CLOUDSERVERS/badvpn/blob/master
 chmod +x /usr/bin/badvpn-udpgw
 echo "Install completed" 
 echo "usage: badvpn stop/start"
-rm -rf easyinstall >/dev/null 2>/dev/null
 sleep 5s
 badvpn start
 echo "--------------------------------"
