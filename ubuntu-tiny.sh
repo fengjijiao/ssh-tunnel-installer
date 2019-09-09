@@ -1,3 +1,4 @@
+#!/bin/bash
 clear
 echo "====================================================="
 echo "            Auto Insstaller Tunneling"
