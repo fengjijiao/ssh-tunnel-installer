@@ -19,7 +19,7 @@ apt-get -y install wget curl
 apt-get -y install nano
 
 echo "Installing mproxy"
-wget https://github.com/CLOUDSERVERS/mproxy-mod/raw/mproxy-mod/mproxy -o /usr/bin/mproxy-cli
+wget -O /usr/bin/mproxy-cli https://github.com/CLOUDSERVERS/mproxy-mod/blob/mproxy-mod/mproxy?raw=true
 chmod +x /usr/bin/mproxy-cli
 echo "#!/bin/bash
 if [ "'$1'" == start ]
@@ -85,7 +85,6 @@ sleep 3s
 #informasi
 clear
 echo "---------- Informasi --------"
-echo "Installer Stunnel4 Berhasil"
 echo "-----------------------------"
 echo "Mproxy          : 80"
 echo "-----------------------------"
