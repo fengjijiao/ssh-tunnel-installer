@@ -18,13 +18,25 @@ apt-get -y upgrade
 apt-get -y install wget curl
 apt-get -y install nano
 
+#install dropbear
+apt-get -y install dropbear
+sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=65535/g' /etc/default/dropbear
+echo "/bin/false" >> /etc/shells
+service dropbear restart
+
+echo "--------------------------------"
+echo "Dropbear Installed..."
+echo "--------------------------------"
+
+sleep 5
 echo "Installing mproxy"
 wget -O /usr/bin/mproxy-cli https://github.com/CLOUDSERVERS/mproxy-mod/blob/mproxy-mod/mproxy?raw=true
 chmod +x /usr/bin/mproxy-cli
 echo "#!/bin/bash
 if [ "'$1'" == start ]
 then
-mproxy-cli -l 80 -m Lbxx: -r 127.0.0.1:22 > /dev/null &
+mproxy-cli -l 80 -m Lbxx: -r 127.0.0.1:65535 > /dev/null &
 echo 'mproxy started'
 fi
 if [ "'$1'" == stop ]
@@ -44,6 +56,7 @@ mproxy start
 echo "--------------------------------"
 echo "Mproxy Installed..."
 echo "--------------------------------"
+mproxy start
 sleep 5
 
 #install badvpn-udpgw
